@@ -152,10 +152,11 @@ st.markdown(html_structure, unsafe_allow_html=True)
 
 st.write("")
 
-with st.expander("✍️ 你想要什么？", expanded=False):
+with st.expander("✍️ 今天你想要什么？", expanded=False):
     saved_content = load_notes()
     with st.form("notes_form"):
-        user_input = st.text_area("心无杂念...", value=saved_content, height=120)
-        if st.form_submit_button("存 档"):
+        user_input = st.text_area("写下来吧...", value=saved_content, height=120)
+        if st.form_submit_button("保 存"):
             save_notes(user_input)
+
             st.success("已落笔")
